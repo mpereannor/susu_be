@@ -5,9 +5,9 @@ import { ConfigModule } from '@nestjs/config';
 import base from './../config/base.config';
 import * as redisStore from 'cache-manager-redis-store';
 import type { ClientOpts } from 'redis';
-import { UserModule } from './../user/user.module';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { GraphQLModule } from '@nestjs/graphql';
+import { UsersModule } from '@app/users/users.module';
 
 @Module({
   imports: [
@@ -16,6 +16,9 @@ import { GraphQLModule } from '@nestjs/graphql';
       isGlobal: true,
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
+      autoSchemaFile: './src/schema.gql',
+      debug: true,
+      playground: true,
       driver: ApolloDriver,
     }),
     CacheModule.register(<ClientOpts>{
@@ -27,7 +30,7 @@ import { GraphQLModule } from '@nestjs/graphql';
       password: process.env.REDIS_PASSWORD,
       no_ready_check: true,
     }),
-    UserModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

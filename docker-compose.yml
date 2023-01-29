@@ -5,6 +5,7 @@ services:
       context: .
       # Only will build development stage from our dockerfile
       target: development
+
     volumes:
       - .:/usr/src
       - /usr/src/node_modules
@@ -14,7 +15,7 @@ services:
       DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}?schema=public
 
     # Run a command against the development stage of the image
-    command: npm run start
+    command: nodemon "dist/main.js"
     ports:
       - 8000:8000
     depends_on:
