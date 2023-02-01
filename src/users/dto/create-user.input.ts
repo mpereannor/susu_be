@@ -15,8 +15,6 @@ export class CreateUserInput {
   password!: string;
   @Field()
   active: boolean;
-  @Field(() => Role, {
-    description: 'User role',
-  })
+  @Field()
   role?: Role;
 }

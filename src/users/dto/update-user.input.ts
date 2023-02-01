@@ -14,8 +14,6 @@ export class UpdateUserInput extends PartialType(CreateUserInput) {
   password?: string;
   @Field()
   active?: boolean;
-  @Field(() => Role, {
-    description: 'User role',
-  })
+  @Field()
   role?: Role;
 }

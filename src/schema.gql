@@ -33,6 +33,7 @@ type Mutation {
 }
 
 input CreateUserInput {
+  id: ID!
   firstname: String!
   lastname: String!
   email: String!
@@ -42,11 +43,11 @@ input CreateUserInput {
 }
 
 input UpdateUserInput {
+  id: ID
   firstname: String!
   lastname: String!
   email: String!
   password: String!
   active: Boolean!
   role: String!
-  id: String!
 }
