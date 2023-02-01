@@ -11,9 +11,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Tweets {
-  id          Int       @default(autoincrement()) @id
-  content     String
-  published   Boolean?  @default(false)
-  createdAt   DateTime  @default(now())
+
+model User {
+  id    String     @id @default(cuid())
+  firstname  String
+  lastname String
+  email String  
+  password String 
+  active Boolean? @default(false)
+  role Role? @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  }
+
+
+
+enum Role {
+  USER
+  AGENT
+  ADMIN
 }
