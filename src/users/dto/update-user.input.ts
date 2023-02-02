@@ -1,4 +1,4 @@
-// import { Role } from '@prisma/client';
+import { Role } from '@prisma/client';
 import { CreateUserInput } from './create-user.input';
 import { InputType, Field, PartialType } from '@nestjs/graphql';
 
