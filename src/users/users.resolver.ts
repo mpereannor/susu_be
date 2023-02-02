@@ -10,26 +10,26 @@ export class UsersResolver {
 
   @Mutation(() => User)
   createUser(@Args('createUserInput') createUserInput: CreateUserInput) {
-    return this.usersService.create(createUserInput);
+    return this.usersService.createUser(createUserInput);
   }
 
-  @Query(() => [User], { name: 'users' })
-  findAll() {
-    return this.usersService.findAll();
+  @Query(() => [User])
+  getUsers() {
+    return this.usersService.getUsers();
   }
 
-  @Query(() => User, { name: 'user' })
-  findOne(@Args('id', { type: () => String }) id: string) {
-    return this.usersService.findOne(id);
+  @Query(() => User)
+  getUser(@Args('id', { type: () => String }) id: string) {
+    return this.usersService.getUser(id);
   }
 
   @Mutation(() => User)
   updateUser(@Args('updateUserInput') updateUserInput: UpdateUserInput) {
-    return this.usersService.update(updateUserInput.id, updateUserInput);
+    return this.usersService.updateUser(updateUserInput.id, updateUserInput);
   }
 
   @Mutation(() => User)
   removeUser(@Args('id', { type: () => String }) id: string) {
-    return this.usersService.remove(id);
+    return this.usersService.deleteUser(id);
   }
 }

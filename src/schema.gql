@@ -22,8 +22,8 @@ enum UserRole {
 }
 
 type Query {
-  users: [User!]!
-  user(id: String!): User!
+  getUsers: [User!]!
+  getUser(id: String!): User!
 }
 
 type Mutation {
@@ -33,7 +33,7 @@ type Mutation {
 }
 
 input CreateUserInput {
-  id: ID!
+  id: String!
   firstname: String!
   lastname: String!
   email: String!
@@ -43,7 +43,7 @@ input CreateUserInput {
 }
 
 input UpdateUserInput {
-  id: ID
+  id: String
   firstname: String!
   lastname: String!
   email: String!

@@ -1,10 +1,8 @@
-import { InputType, Int, Field, ID } from '@nestjs/graphql';
+import { InputType, Field } from '@nestjs/graphql';
 import { Role } from '@prisma/client';
 
 @InputType()
 export class CreateUserInput {
-  @Field(() => ID, { nullable: false })
-  id!: string;
   @Field()
   firstname!: string;
   @Field()

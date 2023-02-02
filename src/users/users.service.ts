@@ -7,18 +7,18 @@ import { UpdateUserInput } from './dto/update-user.input';
 @Injectable()
 export class UsersService {
   constructor(private prisma: PrismaService) {}
-  async create(createUserInput: CreateUserInput) {
+  async createUser(createUserInput: CreateUserInput) {
     return await this.prisma.user.create({
       data: {
         ...createUserInput,
       },
     });
   }
-  findAll() {
+  getUsers() {
     return this.prisma.user.findMany();
   }
 
-  findOne(id: string) {
+  getUser(id: string) {
     return this.prisma.user.findUnique({
       where: {
         id,
@@ -26,7 +26,7 @@ export class UsersService {
     });
   }
 
-  update(id: string, updateUserInput: UpdateUserInput) {
+  updateUser(id: string, updateUserInput: UpdateUserInput) {
     return this.prisma.user.update({
       where: { id },
       data: {
@@ -35,7 +35,7 @@ export class UsersService {
     });
   }
 
-  remove(id: string) {
+  deleteUser(id: string) {
     return this.prisma.user.delete({
       where: { id },
     });

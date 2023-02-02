@@ -6,11 +6,14 @@ generator client {
   binaryTargets = ["native", "linux-musl"]
 }
 
-datasource db {
+  datasource db { 
+
   provider = "postgresql"
-  // url      = env("DATABASE_URL")
-url = "postgresql://postgres:nPQ7rqFdfTVQ98lSU5pt@containers-us-west-169.railway.app:5468/railway"
-}
+  url = env("DATABASE_URL")
+  }
+
+
+
 
 model User {
   id    String     @id @default(cuid())
@@ -19,15 +22,15 @@ model User {
   email String  
   password String 
   active Boolean? @default(false)
-  role Role? @default(USER)
+  role UserRole? @default(USER)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
   }
 
-
-
-enum Role {
-  USER
-  AGENT
-  ADMIN
+ enum UserRole {
+  ADMIN 
+   AGENT
+  USER 
 }
+
+
