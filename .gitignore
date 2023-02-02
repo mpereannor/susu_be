@@ -10,7 +10,7 @@ docker-compose.yml
 logs
 *.log
 npm-debug.log*
-pnpm-debug.log*
+pnpm-debug.log*g
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
