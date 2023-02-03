@@ -6,7 +6,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "npm run prisma:migrate:deploy && nest build",
+    "build": "nest build && npm run prisma:migrate:deploy",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start:dev": "nodemon -L  --inspect=0.0.0.0:8000",
     "start": "node dist/main.js",
