@@ -1,4 +1,3 @@
-import { UserRole } from '@app/app/core/enums/role.enum';
 import { ObjectType, Field, Int } from '@nestjs/graphql';
 
 @ObjectType()
@@ -20,6 +19,4 @@ export class User {
   @Field()
   active: boolean;
 
-  @Field(() => UserRole)
-  role: UserRole;
 }

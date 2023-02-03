@@ -9,16 +9,6 @@ type User {
   email: String!
   password: String!
   active: Boolean!
-  role: UserRole!
-}
-
-"""Role of the User"""
-enum UserRole {
-  ADMIN
-  AGENT
-
-  """The default role"""
-  USER
 }
 
 type Query {
@@ -38,7 +28,6 @@ input CreateUserInput {
   email: String!
   password: String!
   active: Boolean!
-  role: String!
 }
 
 input UpdateUserInput {
@@ -47,6 +36,5 @@ input UpdateUserInput {
   email: String!
   password: String!
   active: Boolean!
-  role: String!
   id: String!
 }

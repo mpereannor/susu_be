@@ -1,5 +1,4 @@
 import { InputType, Field } from '@nestjs/graphql';
-import { Role } from '@prisma/client';
 
 @InputType()
 export class CreateUserInput {
@@ -13,6 +12,4 @@ export class CreateUserInput {
   password!: string;
   @Field()
   active: boolean;
-  @Field()
-  role?: Role;
 }

@@ -23,15 +23,8 @@ model User {
   email String  
   password String 
   active Boolean? @default(false)
-  role UserRole? @default(USER)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
   }
-
- enum UserRole {
-  ADMIN 
-   AGENT
-  USER 
-}
 
 
