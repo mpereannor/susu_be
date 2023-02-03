@@ -18,6 +18,7 @@ import { UsersModule } from '@app/users/users.module';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       autoSchemaFile: './src/schema.gql',
       debug: true,
+      persistedQueries: false,
       playground: true,
       driver: ApolloDriver,
     }),
