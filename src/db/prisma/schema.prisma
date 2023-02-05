@@ -10,7 +10,6 @@ generator client {
 
   provider = "postgresql"
   url = env("DATABASE_URL")
-  // url = "postgresql://postgres:nPQ7rqFdfTVQ98lSU5pt@containers-us-west-169.railway.app:5468/railway"
   }
 
 
@@ -21,7 +20,6 @@ model User {
   firstname  String
   lastname String
   email String  
-  password String 
   active Boolean? @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())

@@ -12,7 +12,5 @@ export class UpdateUserInput extends PartialType(CreateUserInput) {
   @Field()
   email?: string;
   @Field()
-  password?: string;
-  @Field()
   active?: boolean;
 }
