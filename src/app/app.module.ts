@@ -21,6 +21,7 @@ import { UsersModule } from '@app/users/users.module';
       persistedQueries: false,
       playground: true,
       driver: ApolloDriver,
+      introspection: true,
     }),
     CacheModule.register(<ClientOpts>{
       isGlobal: true,
