@@ -9,5 +9,5 @@ export class CreateUserInput {
   @Field()
   email!: string;
   @Field()
-  active: boolean;
+  active!: boolean;
 }

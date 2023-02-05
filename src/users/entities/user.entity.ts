@@ -11,5 +11,5 @@ export class User {
   @Field()
   email!: string;
   @Field()
-  active: boolean;
+  active!: boolean;
 }
