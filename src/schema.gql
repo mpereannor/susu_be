@@ -4,7 +4,7 @@
 
 type User {
   id: String!
-  firstname: String!
+  name: String!
   lastname: String!
   email: String!
   active: Boolean!
@@ -22,14 +22,14 @@ type Mutation {
 }
 
 input CreateUserInput {
-  firstname: String!
+  name: String!
   lastname: String!
   email: String!
   active: Boolean!
 }
 
 input UpdateUserInput {
-  firstname: String!
+  name: String!
   lastname: String!
   email: String!
   active: Boolean!
